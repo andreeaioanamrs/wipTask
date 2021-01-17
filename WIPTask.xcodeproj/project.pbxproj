@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		BD80B81D25B4AC3E0064A750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD80B81B25B4AC3E0064A750 /* Main.storyboard */; };
 		BD80B81F25B4AC430064A750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD80B81E25B4AC430064A750 /* Assets.xcassets */; };
 		BD80B82225B4AC430064A750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD80B82025B4AC430064A750 /* LaunchScreen.storyboard */; };
+		BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2886025B4B1CC00FEF83E /* DataSource.swift */; };
+		BDC2886325B4B1F800FEF83E /* AllLocations.json in Resources */ = {isa = PBXBuildFile; fileRef = BDC2886225B4B1F800FEF83E /* AllLocations.json */; };
+		BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2886425B4B57B00FEF83E /* DataFetcher.swift */; };
 		FCC3B965EBB1E6A110FACC05 /* Pods_WIPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD3D8F2FBAC82424737F2D2 /* Pods_WIPTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		BD80B81E25B4AC430064A750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD80B82125B4AC430064A750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD80B82325B4AC430064A750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDC2886025B4B1CC00FEF83E /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		BDC2886225B4B1F800FEF83E /* AllLocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllLocations.json; sourceTree = "<group>"; };
+		BDC2886425B4B57B00FEF83E /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIPTask.debug.xcconfig"; path = "Target Support Files/Pods-WIPTask/Pods-WIPTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +62,6 @@
 				E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */,
 				2FCFA73EDBB83BB0C9178C8F /* Pods-WIPTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +86,7 @@
 		BD80B81425B4AC3E0064A750 /* WIPTask */ = {
 			isa = PBXGroup;
 			children = (
+				BDC2885D25B4B17C00FEF83E /* DataSource */,
 				BD80B81525B4AC3E0064A750 /* AppDelegate.swift */,
 				BD80B81725B4AC3E0064A750 /* SceneDelegate.swift */,
 				BD80B81925B4AC3E0064A750 /* ViewController.swift */,
@@ -90,6 +96,32 @@
 				BD80B82325B4AC430064A750 /* Info.plist */,
 			);
 			path = WIPTask;
+			sourceTree = "<group>";
+		};
+		BDC2885D25B4B17C00FEF83E /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2885F25B4B19500FEF83E /* Data */,
+				BDC2885E25B4B18900FEF83E /* Models */,
+				BDC2886425B4B57B00FEF83E /* DataFetcher.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		BDC2885E25B4B18900FEF83E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2886025B4B1CC00FEF83E /* DataSource.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BDC2885F25B4B19500FEF83E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2886225B4B1F800FEF83E /* AllLocations.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +186,7 @@
 			files = (
 				BD80B82225B4AC430064A750 /* LaunchScreen.storyboard in Resources */,
 				BD80B81F25B4AC430064A750 /* Assets.xcassets in Resources */,
+				BDC2886325B4B1F800FEF83E /* AllLocations.json in Resources */,
 				BD80B81D25B4AC3E0064A750 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */,
 				BD80B81A25B4AC3E0064A750 /* ViewController.swift in Sources */,
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,
+				BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */,
 				BD80B81825B4AC3E0064A750 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
