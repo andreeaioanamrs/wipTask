@@ -1,5 +1,5 @@
 //
-//  AddLocationView.swift
+//  AddEditLocationView.swift
 //  WIPTask
 //
 //  Created by Andreea Ioana Muresan on 18/01/2021.
@@ -8,7 +8,14 @@
 
 import UIKit
 
-class AddLocationView: UIView {
+enum Scenario {
+    case add
+    case edit
+}
+
+class AddEditLocationView: UIView {
+    
+    let scenario: Scenario
     
     let nameTextField: UITextField = {
         let textField = UITextField()
@@ -38,7 +45,7 @@ class AddLocationView: UIView {
         return textField
     }()
     
-    let addButton: UIButton = {
+    let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Add", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -67,7 +74,8 @@ class AddLocationView: UIView {
         return stackView
     }()
     
-    init() {
+    init(scenario: Scenario) {
+        self.scenario = scenario
         super.init(frame: .zero)
         
         backgroundColor = .white
@@ -77,6 +85,7 @@ class AddLocationView: UIView {
         
         setupSubviews()
         setupConstraints()
+        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -88,7 +97,7 @@ class AddLocationView: UIView {
         stackView.addArrangedSubview(addressTextField)
         stackView.addArrangedSubview(latTextField)
         stackView.addArrangedSubview(lngTextField)
-        stackView.addArrangedSubview(addButton)
+        stackView.addArrangedSubview(actionButton)
         stackView.addArrangedSubview(cancelButton)
         addSubview(stackView)
     }
@@ -100,6 +109,15 @@ class AddLocationView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+    
+    private func configure() {
+        switch scenario {
+        case .add:
+            actionButton.setTitle("ADD", for: .normal)
+        case .edit:
+            actionButton.setTitle("EDIT", for: .normal)
+        }
     }
     
 }

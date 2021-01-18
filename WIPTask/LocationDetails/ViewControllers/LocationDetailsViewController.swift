@@ -57,6 +57,17 @@ class LocationDetailsViewController: UIViewController, BindableType {
         return stackView
     }()
     
+    let editButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("EDIT", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        return button
+    }()
+    
+    private let editLocationView = AddEditLocationView(scenario: .edit)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +82,22 @@ class LocationDetailsViewController: UIViewController, BindableType {
         viewModel.location
             .bind(onNext: configure(with:))
             .disposed(by: disposeBag)
+        
+        viewModel.isEditLocationHidden
+            .bind(to: editLocationView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        editButton.rx.tap
+            .bind(onNext: viewModel.showEditLocation)
+            .disposed(by: disposeBag)
+        
+        editLocationView.actionButton.rx.tap
+            .bind(onNext: editLocation)
+            .disposed(by: disposeBag)
+        
+        editLocationView.cancelButton.rx.tap
+            .bind(onNext: viewModel.cancelEditLocation)
+            .disposed(by: disposeBag)
     }
     
     private func setupSubviews() {
@@ -78,9 +105,11 @@ class LocationDetailsViewController: UIViewController, BindableType {
         stackView.addArrangedSubview(addressLabel)
         stackView.addArrangedSubview(latLabel)
         stackView.addArrangedSubview(longLabel)
+        stackView.addArrangedSubview(editButton)
         
         view.addSubview(locationImageView)
         view.addSubview(stackView)
+        view.addSubview(editLocationView)
     }
     
     private func setupConstraints() {
@@ -91,7 +120,12 @@ class LocationDetailsViewController: UIViewController, BindableType {
             stackView.topAnchor.constraint(equalTo: locationImageView.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            editLocationView.widthAnchor.constraint(equalToConstant: 200),
+            editLocationView.heightAnchor.constraint(equalToConstant: 200),
+            editLocationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            editLocationView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -101,6 +135,11 @@ class LocationDetailsViewController: UIViewController, BindableType {
         addressLabel.text = "Address: " + location.address
         latLabel.text = "lat: \(String(describing: location.latitude ?? location.lat ?? 0))"
         longLabel.text = "long: \(String(describing: location.longitude ?? location.lng ?? 0))"
+    }
+    
+    private func editLocation() {
+        // Get New information
+        viewModel.editLocation()
     }
 
 }

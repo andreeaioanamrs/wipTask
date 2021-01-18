@@ -25,7 +25,7 @@ class ViewController: UIViewController, BindableType {
         return collectionView
     }()
     
-    private let addLocationView = AddLocationView()
+    private let addLocationView = AddEditLocationView(scenario: .add)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class ViewController: UIViewController, BindableType {
             .bind(onNext: viewModel.cancelAddLocation)
             .disposed(by: disposeBag)
         
-        addLocationView.addButton.rx.tap
+        addLocationView.actionButton.rx.tap
             .bind(onNext: addLocation)
             .disposed(by: disposeBag)
     }
