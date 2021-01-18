@@ -24,6 +24,9 @@
 		BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2886425B4B57B00FEF83E /* DataFetcher.swift */; };
 		BDE4AEC425B57BDE0070C4AB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */; };
 		BDE4AECF25B58EA50070C4AB /* UIImageView+wipTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AECE25B58EA50070C4AB /* UIImageView+wipTask.swift */; };
+		BDE4AED625B591B80070C4AB /* LocationDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AED525B591B80070C4AB /* LocationDetailsCoordinator.swift */; };
+		BDE4AED925B591E20070C4AB /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */; };
+		BDE4AEDC25B592F90070C4AB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */; };
 		FCC3B965EBB1E6A110FACC05 /* Pods_WIPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD3D8F2FBAC82424737F2D2 /* Pods_WIPTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		BDC2886425B4B57B00FEF83E /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDE4AECE25B58EA50070C4AB /* UIImageView+wipTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+wipTask.swift"; sourceTree = "<group>"; };
+		BDE4AED525B591B80070C4AB /* LocationDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsCoordinator.swift; sourceTree = "<group>"; };
+		BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
+		BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIPTask.debug.xcconfig"; path = "Target Support Files/Pods-WIPTask/Pods-WIPTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,12 +87,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BD0E542125B4D6C5007905FD /* Models */ = {
+		BD0E542125B4D6C5007905FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				BD0E542A25B4DE01007905FD /* HomeViewModel.swift */,
 			);
-			path = Models;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		BD0E542225B4D6C7007905FD /* ViewControllers */ = {
@@ -139,7 +145,7 @@
 			children = (
 				BD0E543725B57479007905FD /* Views */,
 				BD0E542525B4D6EA007905FD /* Coordinators */,
-				BD0E542125B4D6C5007905FD /* Models */,
+				BD0E542125B4D6C5007905FD /* ViewModels */,
 				BD0E542225B4D6C7007905FD /* ViewControllers */,
 			);
 			path = Home;
@@ -148,6 +154,9 @@
 		BD299EC725B4C57C002CA711 /* LocationDetails */ = {
 			isa = PBXGroup;
 			children = (
+				BDE4AED425B5914E0070C4AB /* Coordinators */,
+				BDE4AED225B5913C0070C4AB /* ViewModels */,
+				BDE4AED125B591280070C4AB /* ViewControllers */,
 			);
 			path = LocationDetails;
 			sourceTree = "<group>";
@@ -211,6 +220,30 @@
 				BDC2886225B4B1F800FEF83E /* AllLocations.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BDE4AED125B591280070C4AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BDE4AED225B5913C0070C4AB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BDE4AED425B5914E0070C4AB /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BDE4AED525B591B80070C4AB /* LocationDetailsCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,8 +363,11 @@
 			files = (
 				BD0E543E25B5775D007905FD /* UICollectionViewLayout+wipTask.swift in Sources */,
 				BD299EC525B4C4A2002CA711 /* Coordinator.swift in Sources */,
+				BDE4AED625B591B80070C4AB /* LocationDetailsCoordinator.swift in Sources */,
 				BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */,
+				BDE4AED925B591E20070C4AB /* LocationDetailsViewModel.swift in Sources */,
 				BD0E542B25B4DE01007905FD /* HomeViewModel.swift in Sources */,
+				BDE4AEDC25B592F90070C4AB /* LocationDetailsViewController.swift in Sources */,
 				BD80B81A25B4AC3E0064A750 /* ViewController.swift in Sources */,
 				BD0E543A25B57626007905FD /* IntrinsicCollectionView.swift in Sources */,
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,

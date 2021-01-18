@@ -45,6 +45,11 @@ class ViewController: UIViewController, BindableType {
                 return cell
             }
             .disposed(by: disposeBag)
+        
+        collectionView.rx.itemSelected
+            .map({ $0.row })
+            .bind(onNext: { [weak self] row in self?.viewModel.showDetails(forLocationAt: row) })
+            .disposed(by: disposeBag)
     }
     
     private func setupSubviews() {

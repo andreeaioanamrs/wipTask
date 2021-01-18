@@ -20,4 +20,10 @@ class HomeViewModel {
         locations.accept(DataFetcher.fetchData()?.locations ?? [])
     }
     
+    func showDetails(forLocationAt index: Int) {
+        let location = locations.value[index]
+        
+        coordinator.showDetails(for: location)
+    }
+    
 }

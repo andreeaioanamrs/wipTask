@@ -14,4 +14,11 @@ class HomeCoordinator: Coordinator {
         transition(to: .home(HomeViewModel(coordinator: self)))
     }
     
+    func showDetails(for location: Location) {
+        let coordinator = LocationDetailsCoordinator(location: location,
+                                                     parentCoordinator: self,
+                                                     navigationController: navigationController)
+        coordinator.start()
+    }
+    
 }

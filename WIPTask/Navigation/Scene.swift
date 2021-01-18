@@ -10,6 +10,7 @@ import UIKit
 
 enum Scene {
     case home(HomeViewModel)
+    case locationDetails(LocationDetailsViewModel)
 }
 
 extension Scene {
@@ -20,6 +21,8 @@ extension Scene {
         switch self {
         case .home(let viewModel):
             return bind(viewController: ViewController(), viewModel: viewModel)
+        case .locationDetails(let viewModel):
+            return bind(viewController: LocationDetailsViewController(), viewModel: viewModel)
         }
     }
     
