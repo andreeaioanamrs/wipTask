@@ -17,7 +17,7 @@ class HomeViewModel {
     init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator
         
-        locations.accept(DataFetcher.fetchData()?.locations ?? [])
+        locations.accept(DataFetcher.fetchData() ?? [])
     }
     
     func showDetails(forLocationAt index: Int) {

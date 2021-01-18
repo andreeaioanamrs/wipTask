@@ -27,6 +27,7 @@
 		BDE4AED625B591B80070C4AB /* LocationDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AED525B591B80070C4AB /* LocationDetailsCoordinator.swift */; };
 		BDE4AED925B591E20070C4AB /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */; };
 		BDE4AEDC25B592F90070C4AB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */; };
+		BDE4AEE425B5A2FA0070C4AB /* UserDefaults+wipTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEE325B5A2FA0070C4AB /* UserDefaults+wipTask.swift */; };
 		FCC3B965EBB1E6A110FACC05 /* Pods_WIPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD3D8F2FBAC82424737F2D2 /* Pods_WIPTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		BDE4AED525B591B80070C4AB /* LocationDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsCoordinator.swift; sourceTree = "<group>"; };
 		BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
 		BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		BDE4AEE325B5A2FA0070C4AB /* UserDefaults+wipTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+wipTask.swift"; sourceTree = "<group>"; };
 		E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIPTask.debug.xcconfig"; path = "Target Support Files/Pods-WIPTask/Pods-WIPTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			children = (
 				BD0E543D25B5775D007905FD /* UICollectionViewLayout+wipTask.swift */,
 				BDE4AECE25B58EA50070C4AB /* UIImageView+wipTask.swift */,
+				BDE4AEE325B5A2FA0070C4AB /* UserDefaults+wipTask.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				BD80B81A25B4AC3E0064A750 /* ViewController.swift in Sources */,
 				BD0E543A25B57626007905FD /* IntrinsicCollectionView.swift in Sources */,
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,
+				BDE4AEE425B5A2FA0070C4AB /* UserDefaults+wipTask.swift in Sources */,
 				BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */,
 				BD299EC125B4C3E9002CA711 /* BindableType.swift in Sources */,
 				BDE4AEC425B57BDE0070C4AB /* LocationCollectionViewCell.swift in Sources */,
