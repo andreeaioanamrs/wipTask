@@ -25,6 +25,8 @@ class ViewController: UIViewController, BindableType {
         return collectionView
     }()
     
+    private let addLocationView = AddLocationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +52,26 @@ class ViewController: UIViewController, BindableType {
             .map({ $0.row })
             .bind(onNext: { [weak self] row in self?.viewModel.showDetails(forLocationAt: row) })
             .disposed(by: disposeBag)
+        
+        viewModel.isAddLocationHidden
+            .bind(to: addLocationView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        addLocationView.cancelButton.rx.tap
+            .bind(onNext: viewModel.cancelAddLocation)
+            .disposed(by: disposeBag)
+        
+        addLocationView.addButton.rx.tap
+            .bind(onNext: addLocation)
+            .disposed(by: disposeBag)
     }
     
     private func setupSubviews() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                 target: viewModel,
+                                                                 action: #selector(viewModel.showAddLocation))
         view.addSubview(collectionView)
+        view.addSubview(addLocationView)
     }
     
     private func setupConstraints() {
@@ -61,8 +79,22 @@ class ViewController: UIViewController, BindableType {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            addLocationView.widthAnchor.constraint(equalToConstant: 200),
+            addLocationView.heightAnchor.constraint(equalToConstant: 200),
+            addLocationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            addLocationView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+    }
+    
+    private func addLocation() {
+        let name = addLocationView.nameTextField.text
+        let address = addLocationView.addressTextField.text
+        let lat = Double(addLocationView.latTextField.text ?? "")
+        let lng = Double(addLocationView.lngTextField.text ?? "")
+        
+        viewModel.addNewLocation(name, address: address, lat: lat, lng: lng)
     }
 
 }

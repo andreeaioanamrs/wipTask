@@ -28,6 +28,7 @@
 		BDE4AED925B591E20070C4AB /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */; };
 		BDE4AEDC25B592F90070C4AB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */; };
 		BDE4AEE425B5A2FA0070C4AB /* UserDefaults+wipTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEE325B5A2FA0070C4AB /* UserDefaults+wipTask.swift */; };
+		BDE4AEDF25B59EFA0070C4AB /* AddLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEDE25B59EFA0070C4AB /* AddLocationView.swift */; };
 		FCC3B965EBB1E6A110FACC05 /* Pods_WIPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD3D8F2FBAC82424737F2D2 /* Pods_WIPTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		BDE4AED825B591E20070C4AB /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
 		BDE4AEDB25B592F90070C4AB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		BDE4AEE325B5A2FA0070C4AB /* UserDefaults+wipTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+wipTask.swift"; sourceTree = "<group>"; };
+		BDE4AEDE25B59EFA0070C4AB /* AddLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationView.swift; sourceTree = "<group>"; };
 		E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIPTask.debug.xcconfig"; path = "Target Support Files/Pods-WIPTask/Pods-WIPTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			children = (
 				BD0E543925B57626007905FD /* IntrinsicCollectionView.swift */,
 				BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */,
+				BDE4AEDE25B59EFA0070C4AB /* AddLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				BDE4AED925B591E20070C4AB /* LocationDetailsViewModel.swift in Sources */,
 				BD0E542B25B4DE01007905FD /* HomeViewModel.swift in Sources */,
 				BDE4AEDC25B592F90070C4AB /* LocationDetailsViewController.swift in Sources */,
+				BDE4AEDF25B59EFA0070C4AB /* AddLocationView.swift in Sources */,
 				BD80B81A25B4AC3E0064A750 /* ViewController.swift in Sources */,
 				BD0E543A25B57626007905FD /* IntrinsicCollectionView.swift in Sources */,
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,
