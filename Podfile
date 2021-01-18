@@ -9,5 +9,6 @@ target 'WIPTask' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'RxDataSources'
+	pod 'Kingfisher'
 
 end
