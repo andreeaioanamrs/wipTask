@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController, BindableType {
     
     var viewModel: HomeViewModel!
+    private let disposeBag = DisposeBag()
     
-    private var collectionVIew: UICollectionView = {
-        let collectionVIew = IntrinsicCollectionView(frame: .zero,
+    private let collectionView: UICollectionView = {
+        let collectionView = IntrinsicCollectionView(frame: .zero,
                                                      collectionViewLayout: .listCollectionViewFlowLayout())
-        collectionVIew.backgroundColor = .white
-        collectionVIew.allowsMultipleSelection = false
-        collectionVIew.translatesAutoresizingMaskIntoConstraints = false
-        return collectionVIew
+        collectionView.register(LocationCollectionViewCell.self, forCellWithReuseIdentifier: "locationCell")
+        collectionView.backgroundColor = .white
+        collectionView.allowsMultipleSelection = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
     
     override func viewDidLoad() {
@@ -32,19 +36,27 @@ class ViewController: UIViewController, BindableType {
     }
     
     func bindViewModel() {
-        
+        viewModel.locations
+            .bind(to: collectionView.rx.items) { collectionView, row, location -> LocationCollectionViewCell in
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell",
+                                                                    for: IndexPath(row: row, section: 0)) as? LocationCollectionViewCell else { return LocationCollectionViewCell() }
+                
+                cell.configure(with: location)
+                return cell
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setupSubviews() {
-        view.addSubview(collectionVIew)
+        view.addSubview(collectionView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            collectionVIew.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionVIew.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionVIew.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionVIew.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 

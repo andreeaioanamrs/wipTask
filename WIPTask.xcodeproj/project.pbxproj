@@ -22,6 +22,7 @@
 		BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2886025B4B1CC00FEF83E /* DataSource.swift */; };
 		BDC2886325B4B1F800FEF83E /* AllLocations.json in Resources */ = {isa = PBXBuildFile; fileRef = BDC2886225B4B1F800FEF83E /* AllLocations.json */; };
 		BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2886425B4B57B00FEF83E /* DataFetcher.swift */; };
+		BDE4AEC425B57BDE0070C4AB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */; };
 		FCC3B965EBB1E6A110FACC05 /* Pods_WIPTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD3D8F2FBAC82424737F2D2 /* Pods_WIPTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		BDC2886025B4B1CC00FEF83E /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		BDC2886225B4B1F800FEF83E /* AllLocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllLocations.json; sourceTree = "<group>"; };
 		BDC2886425B4B57B00FEF83E /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E63FBBC849F69D244118953A /* Pods-WIPTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WIPTask.debug.xcconfig"; path = "Target Support Files/Pods-WIPTask/Pods-WIPTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0E543925B57626007905FD /* IntrinsicCollectionView.swift */,
+				BDE4AEC325B57BDE0070C4AB /* LocationCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,
 				BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */,
 				BD299EC125B4C3E9002CA711 /* BindableType.swift in Sources */,
+				BDE4AEC425B57BDE0070C4AB /* LocationCollectionViewCell.swift in Sources */,
 				BD80B81825B4AC3E0064A750 /* SceneDelegate.swift in Sources */,
 				BD0E542725B4D9D2007905FD /* Scene.swift in Sources */,
 				BD0E542E25B4DE5E007905FD /* HomeCoordinator.swift in Sources */,

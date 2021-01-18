@@ -12,7 +12,7 @@ extension UICollectionViewLayout {
     
     static func listCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 80)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0.0
         layout.minimumInteritemSpacing = 0.0
