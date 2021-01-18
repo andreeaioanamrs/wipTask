@@ -67,5 +67,6 @@ class LocationCollectionViewCell: UICollectionViewCell {
     func configure(with location: Location) {
         addressLabel.text = location.address
         addressLabel.textColor = .blue
+        locationImageView.setLocationImage(URL(string: location.image ?? ""))
     }
 }
