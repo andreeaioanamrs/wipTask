@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         HomeCoordinator(navigationController: navigationController, parentCoordinator: nil).start()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        DataFetcher.fetchData()
         return true
     }
 

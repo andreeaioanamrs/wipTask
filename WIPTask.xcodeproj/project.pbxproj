@@ -10,6 +10,8 @@
 		BD0E542725B4D9D2007905FD /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E542625B4D9D2007905FD /* Scene.swift */; };
 		BD0E542B25B4DE01007905FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E542A25B4DE01007905FD /* HomeViewModel.swift */; };
 		BD0E542E25B4DE5E007905FD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E542D25B4DE5E007905FD /* HomeCoordinator.swift */; };
+		BD0E543A25B57626007905FD /* IntrinsicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E543925B57626007905FD /* IntrinsicCollectionView.swift */; };
+		BD0E543E25B5775D007905FD /* UICollectionViewLayout+wipTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0E543D25B5775D007905FD /* UICollectionViewLayout+wipTask.swift */; };
 		BD299EC125B4C3E9002CA711 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD299EC025B4C3E9002CA711 /* BindableType.swift */; };
 		BD299EC525B4C4A2002CA711 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD299EC425B4C4A2002CA711 /* Coordinator.swift */; };
 		BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80B81525B4AC3E0064A750 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 		BD0E542625B4D9D2007905FD /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		BD0E542A25B4DE01007905FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BD0E542D25B4DE5E007905FD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		BD0E543925B57626007905FD /* IntrinsicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicCollectionView.swift; sourceTree = "<group>"; };
+		BD0E543D25B5775D007905FD /* UICollectionViewLayout+wipTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+wipTask.swift"; sourceTree = "<group>"; };
 		BD299EC025B4C3E9002CA711 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		BD299EC425B4C4A2002CA711 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BD80B81225B4AC3E0064A750 /* WIPTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIPTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,22 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		BD0E543725B57479007905FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD0E543925B57626007905FD /* IntrinsicCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD0E543C25B57734007905FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD0E543D25B5775D007905FD /* UICollectionViewLayout+wipTask.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BD299EBF25B4C33B002CA711 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +131,7 @@
 		BD299EC625B4C569002CA711 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BD0E543725B57479007905FD /* Views */,
 				BD0E542525B4D6EA007905FD /* Coordinators */,
 				BD0E542125B4D6C5007905FD /* Models */,
 				BD0E542225B4D6C7007905FD /* ViewControllers */,
@@ -146,6 +167,7 @@
 		BD80B81425B4AC3E0064A750 /* WIPTask */ = {
 			isa = PBXGroup;
 			children = (
+				BD0E543C25B57734007905FD /* Extensions */,
 				BD299EBF25B4C33B002CA711 /* Navigation */,
 				BDC2885D25B4B17C00FEF83E /* DataSource */,
 				BD299EC625B4C569002CA711 /* Home */,
@@ -300,10 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0E543E25B5775D007905FD /* UICollectionViewLayout+wipTask.swift in Sources */,
 				BD299EC525B4C4A2002CA711 /* Coordinator.swift in Sources */,
 				BDC2886525B4B57B00FEF83E /* DataFetcher.swift in Sources */,
 				BD0E542B25B4DE01007905FD /* HomeViewModel.swift in Sources */,
 				BD80B81A25B4AC3E0064A750 /* ViewController.swift in Sources */,
+				BD0E543A25B57626007905FD /* IntrinsicCollectionView.swift in Sources */,
 				BD80B81625B4AC3E0064A750 /* AppDelegate.swift in Sources */,
 				BDC2886125B4B1CC00FEF83E /* DataSource.swift in Sources */,
 				BD299EC125B4C3E9002CA711 /* BindableType.swift in Sources */,

@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import RxRelay
 
 class HomeViewModel {
     let coordinator: HomeCoordinator
     
+    let locations = BehaviorRelay<[Location]?>(value: [])
+
     init(coordinator: HomeCoordinator) {
         self.coordinator = coordinator
+        
+        locations.accept(DataFetcher.fetchData()?.locations)
     }
-    
-    
     
 }

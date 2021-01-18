@@ -10,15 +10,18 @@ import Foundation
 
 class DataFetcher {
     
-    static func fetchData() {
+    static func fetchData() -> DataSource? {
         let url = Bundle.main.url(forResource: "AllLocations", withExtension: "json")!
         do {
             let jsonData = try Data(contentsOf: url)
 
-            let _ = try? JSONDecoder().decode(DataSource.self, from: jsonData)
+            let dataSource = try? JSONDecoder().decode(DataSource.self, from: jsonData)
+            return dataSource
         } catch {
             print(error)
         }
+        
+        return nil
     }
     
 }
